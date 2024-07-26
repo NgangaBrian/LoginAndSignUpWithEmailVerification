@@ -30,7 +30,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:id="@+id/login_text_view"
-                    android:text="Register"
+                    android:text="Hi,
+                    Please Register"
                     android:layout_marginTop="50dp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
@@ -62,8 +63,18 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:id="@+id/fname"
+                    android:id="@+id/fullname"
                     android:hint="Full Name"
+                    android:drawableLeft="@drawable/baseline_account_circle_24"
+                    android:padding="15dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/rounded_background"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:id="@+id/username"
+                    android:hint="Username"
                     android:drawableLeft="@drawable/baseline_account_circle_24"
                     android:padding="15dp"
                     android:layout_marginTop="20dp"
@@ -73,8 +84,8 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:id="@+id/username"
-                    android:hint="Username or Email"
+                    android:id="@+id/email"
+                    android:hint="Email"
                     android:drawableLeft="@drawable/baseline_email_24"
                     android:padding="15dp"
                     android:layout_marginTop="20dp"
@@ -130,10 +141,10 @@
                 <Button
                     android:layout_width="200dp"
                     android:layout_height="50dp"
-                    android:id="@+id/loginBtn"
+                    android:id="@+id/registerBtn"
                     android:layout_marginTop="40dp"
                     android:layout_gravity="center"
-                    android:text="SIGN UP"/>
+                    android:text="REGISTER"/>
 
                 <TextView
                     android:layout_width="wrap_content"
