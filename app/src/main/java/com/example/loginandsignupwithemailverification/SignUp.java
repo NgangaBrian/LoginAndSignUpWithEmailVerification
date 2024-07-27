@@ -76,6 +76,13 @@ public class SignUp extends AppCompatActivity {
         String password = pWord.getText().toString();
         String confirmPass = confirmPword.getText().toString();
 
+        if(fullname.equals("") && username.equals("") && email.equals("") && password.equals("") && confirmPass.equals("")){
+            Toast.makeText(SignUp.this, "All Fields are Required", Toast.LENGTH_SHORT).show();
+        }
+        else{
+
+        }
+
     }
 
     public void sendEmail(String stringReceiverEmail, String verificationCode){
