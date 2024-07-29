@@ -19,6 +19,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Properties;
 import java.util.Random;
@@ -40,6 +42,7 @@ public class SignUp extends AppCompatActivity {
     public EditText fullName, userName, uEmail, pWord, confirmPword;
     public String verificationCode;
     public FirebaseAuth firebaseAuth;
+    public DatabaseReference databaseReference;
     private ProgressDialog mProgressDialog;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -55,6 +58,7 @@ public class SignUp extends AppCompatActivity {
         registerBTN = findViewById(R.id.registerBtn);
         firebaseAuth = FirebaseAuth.getInstance();
         mProgressDialog = new ProgressDialog(this);
+        databaseReference = FirebaseDatabase.getInstance().getReference("users");
 
 
         loginTV = findViewById(R.id.toLogin);
@@ -89,23 +93,35 @@ public class SignUp extends AppCompatActivity {
         String password = pWord.getText().toString();
         String confirmPass = confirmPword.getText().toString();
 
-        if(fullname.equals("") && username.equals("") && email.equals("") && password.equals("") && confirmPass.equals("")){
-            fullName.setError("Required");
-            userName.setError("Required");
-            uEmail.setError("Required");
-            pWord.setError("Required");
-            confirmPword.setError("Required");
+        if (fullname.isEmpty() || username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPass.isEmpty()) {
+            if (fullname.isEmpty()) fullName.setError("Required");
+            if (username.isEmpty()) userName.setError("Required");
+            if (email.isEmpty()) uEmail.setError("Required");
+            if (password.isEmpty()) pWord.setError("Required");
+            if (confirmPass.isEmpty()) confirmPword.setError("Required");
             Toast.makeText(SignUp.this, "All Fields are Required", Toast.LENGTH_SHORT).show();
-        }
-        else{
+            mProgressDialog.dismiss();
+        } else if (!password.equals(confirmPword)){
+            confirmPword.setError("Passwords Do Not Match");
+        } else{
             generateVerificationCode();
             firebaseAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) { FirebaseUser user = firebaseAuth.getCurrentUser();
-                                Toast.makeText(SignUp.this, "Account Created.",
-                                        Toast.LENGTH_SHORT).show();
+                            mProgressDialog.dismiss();
+                            if (task.isSuccessful()) {
+                                FirebaseUser user = firebaseAuth.getCurrentUser();
+                                if(user != null){
+                                    String userId = user.getUid();
+                                    User userDetails = new User(fullname, username, email);
+                                    databaseReference.child(userId).setValue(userDetails);
+                                    Toast.makeText(SignUp.this, "Account Created.",
+                                            Toast.LENGTH_SHORT).show();
+                                }  else {
+                                    Toast.makeText(SignUp.this, "Failed to store user details.", Toast.LENGTH_SHORT).show();
+                                }
+
                             } else {
                                 // If sign in fails, display a message to the user.
 
