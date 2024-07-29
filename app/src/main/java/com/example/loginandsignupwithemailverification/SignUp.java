@@ -1,6 +1,7 @@
 package com.example.loginandsignupwithemailverification;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,8 +10,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Properties;
 import java.util.Random;
@@ -31,6 +39,8 @@ public class SignUp extends AppCompatActivity {
     public Button registerBTN;
     public EditText fullName, userName, uEmail, pWord, confirmPword;
     public String verificationCode;
+    public FirebaseAuth firebaseAuth;
+    private ProgressDialog mProgressDialog;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +53,8 @@ public class SignUp extends AppCompatActivity {
         pWord = findViewById(R.id.password);
         confirmPword = findViewById(R.id.confirmPassword);
         registerBTN = findViewById(R.id.registerBtn);
-
-
+        firebaseAuth = FirebaseAuth.getInstance();
+        mProgressDialog = new ProgressDialog(this);
 
 
         loginTV = findViewById(R.id.toLogin);
@@ -60,9 +70,12 @@ public class SignUp extends AppCompatActivity {
         registerBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mProgressDialog.setMessage("Processing Your Request");
+                mProgressDialog.setTitle("Please Wait...");
+                mProgressDialog.setIndeterminate(true);
+                mProgressDialog.show();
                 storeDetails();
-                generateVerificationCode();
-                Toast.makeText(SignUp.this, verificationCode, Toast.LENGTH_LONG).show();
+
             }
         });
 
@@ -85,6 +98,23 @@ public class SignUp extends AppCompatActivity {
             Toast.makeText(SignUp.this, "All Fields are Required", Toast.LENGTH_SHORT).show();
         }
         else{
+            generateVerificationCode();
+            firebaseAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) { FirebaseUser user = firebaseAuth.getCurrentUser();
+                                Toast.makeText(SignUp.this, "Account Created.",
+                                        Toast.LENGTH_SHORT).show();
+                            } else {
+                                // If sign in fails, display a message to the user.
+
+                                Toast.makeText(SignUp.this, "Account creation failed.",
+                                        Toast.LENGTH_SHORT).show();
+
+                            }
+                        }
+                    });
 
         }
 
