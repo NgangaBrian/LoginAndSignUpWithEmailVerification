@@ -1,3 +1,4 @@
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.google.gms.google.services)
@@ -15,6 +16,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -24,10 +26,12 @@ android {
 
             buildConfigField ("String", "SENDER_EMAIL", "\"${project.findProperty("SENDER_EMAIL".toString()) ?: "default@example.com"}\"")
             buildConfigField ("String", "EMAIL_PASS", "\"${project.findProperty("SENDER_EMAIL_PASSWORD".toString()) ?: "defaultPassword"}\"")
+            buildConfigField("String", "API_KEY", "\"${project.findProperty("API_KEY") ?: "defaultApiKey"}\"")
     }
         debug {
             buildConfigField ("String", "SENDER_EMAIL", "\"${project.findProperty("SENDER_EMAIL".toString()) ?: "default@example.com"}\"")
             buildConfigField ("String", "EMAIL_PASS", "\"${project.findProperty("SENDER_EMAIL_PASSWORD".toString()) ?: "defaultPassword"}\"")
+            buildConfigField("String", "API_KEY", "\"${project.findProperty("API_KEY") ?: "defaultApiKey"}\"")
         }
     }
     buildFeatures {
@@ -42,6 +46,22 @@ android {
         exclude("META-INF/NOTICE.md")
         exclude("META-INF/LICENSE.md")
     }
+}
+
+tasks.register<Copy>("generateFirebaseConfig") {
+    val apiKey = project.findProperty("API_KEY") as String
+
+    from("src/main/assets/firebase_config_template.json") {
+        filter{line ->
+            line.replace("__API_KEY__", apiKey)
+        }
+    }
+    into("src/main/assets/")
+    rename("firebase_config_template.json", "firebase_config.json")
+}
+
+tasks.named("preBuild").configure {
+    dependsOn("generateFirebaseConfig")
 }
 
 dependencies {
