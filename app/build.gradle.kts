@@ -52,6 +52,11 @@ dependencies {
     implementation("androidx.coordinatorlayout:coordinatorlayout:1.2.0")
     implementation("com.sun.mail:android-mail:1.6.6")
     implementation("com.sun.mail:android-activation:1.6.7")
+    implementation(platform("com.google.firebase:firebase-bom:33.3.0"))
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-database:20.0.5")
+    implementation("com.google.firebase:firebase-appcheck:16.0.0") // Add this line
+    implementation("com.android.volley:volley:1.2.1")
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation(libs.firebase.database)

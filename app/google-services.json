@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "313602562793",
+    "project_id": "loginandsignwithverification",
+    "storage_bucket": "loginandsignwithverification.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313602562793:android:94eef9341869c4b43fee78",
+        "android_client_info": {
+          "package_name": "com.example.loginandsignupwithemailverification"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvPllmhwQUjLsIx3K9TbNsX2VFTWI1S1c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

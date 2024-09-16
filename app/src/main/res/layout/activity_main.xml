@@ -6,13 +6,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:background="@drawable/login_background">
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        android:layout_marginTop="200dp"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:id="@+id/welcomeTV"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/signUp"
+        android:text="SIGN UP"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_below="@+id/welcomeTV"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"/>
 
 
-    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/login"
+        android:text="LOGIN"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_below="@+id/signUp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        />
 
 </RelativeLayout>

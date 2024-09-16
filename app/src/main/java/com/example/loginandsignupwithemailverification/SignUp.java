@@ -11,9 +11,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -22,18 +30,21 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 import java.util.Random;
 
 import javax.mail.Authenticator;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
 import javax.mail.Message;
 import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+
 
 
 public class SignUp extends AppCompatActivity {
@@ -78,7 +89,8 @@ public class SignUp extends AppCompatActivity {
                 mProgressDialog.setTitle("Please Wait...");
                 mProgressDialog.setIndeterminate(true);
                 mProgressDialog.show();
-                storeDetails();
+                //storeDetailsinFirebase();
+                storeDetailsinMySQL();
 
             }
         });
@@ -86,7 +98,7 @@ public class SignUp extends AppCompatActivity {
 
     }
 
-    private void storeDetails() {
+    private void storeDetailsinMySQL() {
         String fullname = fullName.getText().toString();
         String username = userName.getText().toString();
         String email = uEmail.getText().toString();
@@ -94,11 +106,97 @@ public class SignUp extends AppCompatActivity {
         String confirmPass = confirmPword.getText().toString();
 
         if (fullname.isEmpty() || username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPass.isEmpty()) {
-            if (fullname.isEmpty()) fullName.setError("Required");
-            if (username.isEmpty()) userName.setError("Required");
-            if (email.isEmpty()) uEmail.setError("Required");
-            if (password.isEmpty()) pWord.setError("Required");
-            if (confirmPass.isEmpty()) confirmPword.setError("Required");
+            if (fullname.isEmpty()) {
+                fullName.setError("Required");
+                mProgressDialog.dismiss();}
+            if (username.isEmpty()) {
+                userName.setError("Required");
+                mProgressDialog.dismiss();}
+            if (email.isEmpty()){
+                uEmail.setError("Required");
+                mProgressDialog.dismiss();}
+            if (password.isEmpty()){
+                pWord.setError("Required");
+                mProgressDialog.dismiss();}
+            if (confirmPass.isEmpty()){
+                confirmPword.setError("Required");
+                mProgressDialog.dismiss();}
+            Toast.makeText(SignUp.this, "All Fields are Required", Toast.LENGTH_SHORT).show();
+            mProgressDialog.dismiss();
+        } else if (!password.equals(confirmPass)){
+            confirmPword.setError("Passwords Do Not Match");
+            mProgressDialog.dismiss();
+        } else{
+            generateVerificationCode();
+            RequestQueue queue = Volley.newRequestQueue(SignUp.this);
+
+            String url =  "http://192.168.43.73:9080/api/v1/register";
+
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    Toast.makeText(SignUp.this, response, Toast.LENGTH_LONG).show();
+                    System.out.println(response);
+                    if(response.equalsIgnoreCase("success")){
+                        fullName.setText("Doneeeeeeee!!!!");
+                        Toast.makeText(SignUp.this, "Registration Succesful", Toast.LENGTH_SHORT).show();
+                        mProgressDialog.dismiss();
+                    } else if (response.equalsIgnoreCase("failed")) {
+                        Toast.makeText(SignUp.this, "Registration Failed", Toast.LENGTH_SHORT).show();
+                        mProgressDialog.dismiss();
+                    } else {
+                        Toast.makeText(SignUp.this, response, Toast.LENGTH_LONG).show();
+                        Toast.makeText(SignUp.this, "Registration Failed", Toast.LENGTH_SHORT).show();
+                        mProgressDialog.dismiss();
+                    }
+
+
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    error.printStackTrace();
+                    System.out.println(error.getMessage());
+                    Toast.makeText(SignUp.this, "Registration Failed", Toast.LENGTH_SHORT).show();
+                    mProgressDialog.dismiss();
+
+                }
+            }){
+                @Nullable
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<>();
+                    params.put("fullname", fullName.getText().toString());
+                    params.put("username", userName.getText().toString());
+                    params.put("email", uEmail.getText().toString());
+                    params.put("password", pWord.getText().toString());
+
+                    return params;
+                }
+            };
+            queue.add(stringRequest);
+
+        }
+    }
+
+    private void storeDetailsinFirebase() {
+        String fullname = fullName.getText().toString();
+        String username = userName.getText().toString();
+        String email = uEmail.getText().toString();
+        String password = pWord.getText().toString();
+        String confirmPass = confirmPword.getText().toString();
+
+        if (fullname.isEmpty() || username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPass.isEmpty()) {
+            if (fullname.isEmpty()) 
+                fullName.setError("Required");
+            if (username.isEmpty()) 
+                userName.setError("Required");
+            if (email.isEmpty()) 
+                uEmail.setError("Required");
+            if (password.isEmpty()) 
+                pWord.setError("Required");
+            if (confirmPass.isEmpty()) 
+                confirmPword.setError("Required");
             Toast.makeText(SignUp.this, "All Fields are Required", Toast.LENGTH_SHORT).show();
             mProgressDialog.dismiss();
         } else if (!password.equals(confirmPword)){
@@ -162,7 +260,7 @@ public class SignUp extends AppCompatActivity {
         mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(stringReceiverEmail));
 
         String emailContent = String.format("Hello Brian, \n\nYour verification code is %s \n\n Regards, Brian", verificationCode);
-        mimeMessage.setSubject("Subject: Verification Code");
+        mimeMessage.setSubject("Verification Code");
         mimeMessage.setText(emailContent);
 
         Thread thread = new Thread(new Runnable() {
