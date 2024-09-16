@@ -1,4 +1,0 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">LoginAndSignUpWithEmailVerification</string>
-    <string name="appbar_scrolling_view_behavior" tools:ignore="ResourceCycle">@string/appbar_scrolling_view_behavior</string>
-</resources>
