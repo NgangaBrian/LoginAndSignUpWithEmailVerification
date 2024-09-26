@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">LoginAndSignUpWithEmailVerification</string>
+    <string name="appbar_scrolling_view_behavior" ns1:ignore="ResourceCycle">@string/appbar_scrolling_view_behavior</string>
+    <string name="gcm_defaultSenderId" translatable="false">313602562793</string>
+    <string name="google_api_key" translatable="false">Woza</string>
+    <string name="google_app_id" translatable="false">1:313602562793:android:94eef9341869c4b43fee78</string>
+    <string name="google_crash_reporting_api_key" translatable="false">Woza</string>
+    <string name="google_storage_bucket" translatable="false">loginandsignwithverification.appspot.com</string>
+    <string name="project_id" translatable="false">loginandsignwithverification</string>
+    <style name="Base.Theme.LoginAndSignUpWithEmailVerification" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.LoginAndSignUpWithEmailVerification" parent="Base.Theme.LoginAndSignUpWithEmailVerification"/>
+</resources>
