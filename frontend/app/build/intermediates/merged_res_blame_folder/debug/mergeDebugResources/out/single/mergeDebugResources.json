@@ -1,0 +1,114 @@
+[
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\layout_activity_verify_email.xml.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\layout\\activity_verify_email.xml"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\drawable_baseline_lock_24.xml.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\drawable\\baseline_lock_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\drawable_login_icon.png.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\drawable\\login_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\drawable_login_background.jpg.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\drawable\\login_background.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.loginandsignupwithemailverification.app-debug-39:/layout_activity_profile.xml.flat",
+        "source": "com.example.loginandsignupwithemailverification.app-main-41:/layout/activity_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\layout_activity_sign_up.xml.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\layout\\activity_sign_up.xml"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\drawable_baseline_account_circle_24.xml.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\drawable\\baseline_account_circle_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\drawable_baseline_email_24.xml.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\drawable\\baseline_email_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-pngs-35:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\drawable_baseline_password_24.xml.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\drawable\\baseline_password_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\drawable_rounded_background.xml.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\drawable\\rounded_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-debug-39:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Brian\\.gradle\\daemon\\8.6\\com.example.loginandsignupwithemailverification.app-main-41:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    }
+]

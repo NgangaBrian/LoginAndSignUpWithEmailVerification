@@ -1,0 +1,5 @@
+com.example.loginandsignupwithemailverification.test.app-core-1.6.1-0 C:\Users\Brian\.gradle\caches\transforms-4\061b4ac0aa598b458911f0c1e0aeb8cd\transformed\core-1.6.1\res
+com.example.loginandsignupwithemailverification.test.app-androidTest-1 C:\Users\Brian\AndroidStudioProjects\LoginAndSignUpWithEmailVerification\app\build\generated\res\resValues\androidTest\debug
+com.example.loginandsignupwithemailverification.test.app-mergeDebugAndroidTestResources-2 C:\Users\Brian\AndroidStudioProjects\LoginAndSignUpWithEmailVerification\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.loginandsignupwithemailverification.test.app-mergeDebugAndroidTestResources-3 C:\Users\Brian\AndroidStudioProjects\LoginAndSignUpWithEmailVerification\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.loginandsignupwithemailverification.test.app-debugAndroidTest-4 C:\Users\Brian\AndroidStudioProjects\LoginAndSignUpWithEmailVerification\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
